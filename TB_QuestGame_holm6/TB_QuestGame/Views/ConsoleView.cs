@@ -16,7 +16,7 @@ namespace TB_QuestGame
         //
         // declare a Ship and Player object for the ConsoleView object to use
         //
-        Ship _gameUniverse;
+        Ship _gameShip;
         Player _gameTraveler;
 
         #endregion
@@ -30,10 +30,10 @@ namespace TB_QuestGame
         /// <summary>
         /// default constructor to create the console view objects
         /// </summary>
-        public ConsoleView(Player gameTraveler, Ship gameUniverse)
+        public ConsoleView(Player gameTraveler, Ship gameShip)
         {
             _gameTraveler = gameTraveler;
-            _gameUniverse = gameUniverse;
+            _gameShip = gameShip;
 
             InitializeConsole();
         }
@@ -261,7 +261,7 @@ namespace TB_QuestGame
                 ConsoleUtil.DisplayReset();
 
                 //
-                // display a table of space-time locations
+                // display a table of decks
                 //
                 DisplayTARDISDestinationsTable();
 
@@ -279,7 +279,7 @@ namespace TB_QuestGame
 
                     try
                     {
-                        nextSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationByID(locationID);
+                        nextSpaceTimeLocation = _gameShip.GetSpaceTimeLocationByID(locationID);
 
                         ConsoleUtil.DisplayReset();
                         ConsoleUtil.DisplayMessage($"You have indicated {nextSpaceTimeLocation.Name} as your TARDIS destination.");
@@ -337,9 +337,9 @@ namespace TB_QuestGame
             //
             // location name and id
             //
-            foreach (Deck location in _gameUniverse.SpaceTimeLocations)
+            foreach (Deck location in _gameShip.Deck)
             {
-                ConsoleUtil.DisplayMessage(location.SpaceTimeLocationID.ToString().PadRight(10) + location.Name.PadRight(20));
+                ConsoleUtil.DisplayMessage(location.DeckID.ToString().PadRight(10) + location.Name.PadRight(20));
                 locationNumber++;
             }
 
@@ -448,18 +448,18 @@ namespace TB_QuestGame
             ConsoleUtil.HeaderText = "Current Space-Time Location Info";
             ConsoleUtil.DisplayReset();
 
-            ConsoleUtil.DisplayMessage(_gameUniverse.GetSpaceTimeLocationByID(_gameTraveler.SpaceTimeLocationID).Description);
+            ConsoleUtil.DisplayMessage(_gameShip.GetSpaceTimeLocationByID(_gameTraveler.DeckLocationID).Description);
 
             ConsoleUtil.DisplayMessage("");
             ConsoleUtil.DisplayMessage("Items in current location.");
-            foreach (Item item in _gameUniverse.GetItemtsBySpaceTimeLocationID(_gameTraveler.SpaceTimeLocationID))
+            foreach (Item item in _gameShip.GetItemtsBySpaceTimeLocationID(_gameTraveler.DeckLocationID))
             {
                 ConsoleUtil.DisplayMessage(item.Name + " - " + item.Description);
             }
 
             ConsoleUtil.DisplayMessage("");
             ConsoleUtil.DisplayMessage("Treasures in current location.");
-            foreach (Treasure treasure in _gameUniverse.GetTreasuressBySpaceTimeLocationID(_gameTraveler.SpaceTimeLocationID))
+            foreach (Treasure treasure in _gameShip.GetTreasuressBySpaceTimeLocationID(_gameTraveler.DeckLocationID))
             {
                 ConsoleUtil.DisplayMessage(treasure.Name + " - " + treasure.Description);
             }
@@ -472,12 +472,12 @@ namespace TB_QuestGame
         /// <summary>
         public void DisplayListAllTARDISDestinations()
         {
-            ConsoleUtil.HeaderText = "Space-Time Locations";
+            ConsoleUtil.HeaderText = "decks";
             ConsoleUtil.DisplayReset();
 
-            foreach (Deck location in _gameUniverse.SpaceTimeLocations)
+            foreach (Deck location in _gameShip.Deck)
             {
-                ConsoleUtil.DisplayMessage("ID: " + location.SpaceTimeLocationID);
+                ConsoleUtil.DisplayMessage("ID: " + location.DeckID);
                 ConsoleUtil.DisplayMessage("Name: " + location.Name);
                 ConsoleUtil.DisplayMessage("Description: " + location.Description);
                 ConsoleUtil.DisplayMessage("Accessible: " + location.Accessable);
@@ -495,18 +495,18 @@ namespace TB_QuestGame
             ConsoleUtil.HeaderText = "Game Items";
             ConsoleUtil.DisplayReset();
 
-            foreach (Item item in _gameUniverse.Items)
+            foreach (Item item in _gameShip.Items)
             {
                 ConsoleUtil.DisplayMessage("ID: " + item.GameObjectID);
                 ConsoleUtil.DisplayMessage("Name: " + item.Name);
                 ConsoleUtil.DisplayMessage("Description: " + item.Description);
 
                 //
-                // all treasure in the traveler's inventory have a SpaceTimeLocationID of 0
+                // all treasure in the traveler's inventory have a DeckID of 0
                 //
                 if (item.SpaceTimeLocationID != 0)
                 {
-                    ConsoleUtil.DisplayMessage("Location: " + _gameUniverse.GetSpaceTimeLocationByID(item.SpaceTimeLocationID).Name);
+                    ConsoleUtil.DisplayMessage("Location: " + _gameShip.GetSpaceTimeLocationByID(item.SpaceTimeLocationID).Name);
                 }
                 else
                 {
@@ -530,18 +530,18 @@ namespace TB_QuestGame
             ConsoleUtil.HeaderText = "Game Treasures";
             ConsoleUtil.DisplayReset();
 
-            foreach (Treasure treasure in _gameUniverse.Treasures)
+            foreach (Treasure treasure in _gameShip.Treasures)
             {
                 ConsoleUtil.DisplayMessage("ID: " + treasure.GameObjectID);
                 ConsoleUtil.DisplayMessage("Name: " + treasure.Name);
                 ConsoleUtil.DisplayMessage("Description: " + treasure.Description);
                 
                 //
-                // all treasure in the traveler's inventory have a SpaceTimeLocationID of 0
+                // all treasure in the traveler's inventory have a DeckID of 0
                 //
                 if (treasure.SpaceTimeLocationID != 0)
                 {
-                    ConsoleUtil.DisplayMessage("Location: " + _gameUniverse.GetSpaceTimeLocationByID(treasure.SpaceTimeLocationID).Name);
+                    ConsoleUtil.DisplayMessage("Location: " + _gameShip.GetSpaceTimeLocationByID(treasure.SpaceTimeLocationID).Name);
                 }
                 else
                 {
@@ -568,7 +568,7 @@ namespace TB_QuestGame
             ConsoleUtil.DisplayMessage("");
             ConsoleUtil.DisplayMessage($"Player's Race: {_gameTraveler.Race}");
             ConsoleUtil.DisplayMessage("");
-            string spaceTimeLocationName = _gameUniverse.GetSpaceTimeLocationByID(_gameTraveler.SpaceTimeLocationID).Name;
+            string spaceTimeLocationName = _gameShip.GetSpaceTimeLocationByID(_gameTraveler.DeckLocationID).Name;
             ConsoleUtil.DisplayMessage($"Player's Current Location: {spaceTimeLocationName}");
 
             DisplayContinuePrompt();

@@ -11,7 +11,7 @@ namespace TB_QuestGame
         #region FIELDS
 
         private string _name;
-        private int _spaceTimeLocationID; // must be a unique value for each object
+        private int _deckLocationID; // must be a unique value for each object
         private string _description;
         private bool _accessable;
 
@@ -26,10 +26,10 @@ namespace TB_QuestGame
             set { _name = value; }
         }
 
-        public int SpaceTimeLocationID
+        public int DeckID
         {
-            get { return _spaceTimeLocationID; }
-            set { _spaceTimeLocationID = value; }
+            get { return _deckLocationID; }
+            set { _deckLocationID = value; }
         }
 
         public string Description

@@ -11,12 +11,12 @@ namespace TB_QuestGame
     /// </summary>
     public class Ship
     {
-        #region ***** define all lists to be maintained by the Universe object *****
+        #region ***** define all lists to be maintained by the Ship object *****
 
         //
-        // list of all space-time locations
+        // list of all decks
         //
-        public List<Deck> SpaceTimeLocations { get; set; }
+        public List<Deck> Deck { get; set; }
 
         //
         // list of all items
@@ -39,18 +39,18 @@ namespace TB_QuestGame
         public Ship()
         {
             //
-            // instantiate the lists of space-time locations and game objects
+            // instantiate the lists of decks and game objects
             //
-            this.SpaceTimeLocations = new List<Deck>();
+            this.Deck = new List<Deck>();
             this.Items = new List<Item>();
             this.Treasures = new List<Treasure>();
 
             //
-            // add all of the space-time locations and game objects to their lists
+            // add all of the decks and game objects to their lists
             // 
-            IntializeUniverseSpaceTimeLocations();
-            IntializeUniverseItems();
-            IntializeUniverseTreasures();
+            IntializeShipDeck();
+            IntializeShipItems();
+            IntializeShipTreasures();
         }
 
         #endregion
@@ -65,11 +65,11 @@ namespace TB_QuestGame
         {
             int MaxID = 0;
 
-            foreach (Deck STLocation in SpaceTimeLocations)
+            foreach (Deck STLocation in Deck)
             {
-                if (STLocation.SpaceTimeLocationID > MaxID)
+                if (STLocation.DeckID > MaxID)
                 {
-                    MaxID = STLocation.SpaceTimeLocationID;
+                    MaxID = STLocation.DeckID;
                 }
             }
 
@@ -130,16 +130,16 @@ namespace TB_QuestGame
             //
             // run through the space-time location list and grab the correct one
             //
-            foreach (Deck location in SpaceTimeLocations)
+            foreach (Deck location in Deck)
             {
-                if (location.SpaceTimeLocationID == ID)
+                if (location.DeckID == ID)
                 {
                     spt = location;
                 }
             }
 
             //
-            // the specified ID was not found in the universe
+            // the specified ID was not found in the Ship
             // throw and exception
             //
             if (spt == null)
@@ -172,7 +172,7 @@ namespace TB_QuestGame
             }
 
             //
-            // the specified ID was not found in the universe
+            // the specified ID was not found in the Ship
             // throw and exception
             //
             if (requestedItem == null)
@@ -205,7 +205,7 @@ namespace TB_QuestGame
             }
 
             //
-            // the specified ID was not found in the universe
+            // the specified ID was not found in the Ship
             // throw and exception
             //
             if (requestedTreasure == null)
@@ -228,7 +228,7 @@ namespace TB_QuestGame
         /// <returns>list of items in the specified location</returns>
         public List<Item> GetItemtsBySpaceTimeLocationID(int ID)
         {
-            // TODO validate SpaceTimeLocationID
+            // TODO validate DeckID
 
             List<Item> itemsInSpaceTimeLocation = new List<Item>();
 
@@ -253,7 +253,7 @@ namespace TB_QuestGame
         /// <returns>list of treasures in the specified location</returns>
         public List<Treasure> GetTreasuressBySpaceTimeLocationID(int ID)
         {
-            // TODO validate SpaceTimeLocationID
+            // TODO validate DeckID
 
             List<Treasure> treasuresInSpaceTimeLocation = new List<Treasure>();
 
@@ -277,33 +277,33 @@ namespace TB_QuestGame
         #region ***** define methods to initialize all game elements *****
 
         /// <summary>
-        /// initialize the universe with all of the space-time locations
+        /// initialize the Ship with all of the decks
         /// </summary>
-        private void IntializeUniverseSpaceTimeLocations()
+        private void IntializeShipDeck()
         {
-            SpaceTimeLocations.Add(new Deck
+            Deck.Add(new Deck
             {
                 Name = "TARDIS Base",
-                SpaceTimeLocationID = 1,
+                DeckID = 1,
                 Description = "The Norlon Corporation's secret laboratory located deep underground, " +
                               " beneath a nondescript 7-11 on the south-side of Toledo, OH.",
                 Accessable = true
             });
 
-            SpaceTimeLocations.Add(new Deck
+            Deck.Add(new Deck
             {
                 Name = "Xantoria Market",
-                SpaceTimeLocationID = 2,
+                DeckID = 2,
                 Description = "The Xantoria market, once controlled by the Thorian elite, is now an " +
                               "open market managed by the Xantorian Commerce Coop. It is a place " +
                               "where many races from various systems trade goods.",
                 Accessable = true
             });
 
-            SpaceTimeLocations.Add(new Deck
+            Deck.Add(new Deck
             {
                 Name = "Felandrian Plains",
-                SpaceTimeLocationID = 3,
+                DeckID = 3,
                 Description = "The Felandrian Plains are a common destination for tourist. " +
                   "Located just north of the equatorial line on the planet of Corlon, they" +
                   "provide excellent habitat for a rich ecosystem of flora and fauna.",
@@ -312,9 +312,9 @@ namespace TB_QuestGame
         }
 
         /// <summary>
-        /// initialize the universe with all of the items
+        /// initialize the Ship with all of the items
         /// </summary>
-        private void IntializeUniverseItems()
+        private void IntializeShipItems()
         {
             Items.Add(new Item
             {
@@ -329,20 +329,20 @@ namespace TB_QuestGame
 
             Items.Add(new Item
             {
-                Name = "Mirror",
+                Name = "Tricorder",
                 GameObjectID = 2,
-                Description = "A full sized mirror with jewels decorating the border.",
+                Description = "A diagnostic tool carried by all Starfleet personnel.",
                 SpaceTimeLocationID = 2,
-                HasValue = false,
-                Value = 0,
-                CanAddToInventory = false
+                HasValue = true,
+                Value = 1000,
+                CanAddToInventory = true
             });
 
             Items.Add(new Item
             {
-                Name = "Encabulator",
+                Name = "Gold Dot",
                 GameObjectID = 3,
-                Description = "A multi-function device carried by all Time Lords.",
+                Description = "An insignia representing your rank in Starfleet.",
                 SpaceTimeLocationID = 0,
                 HasValue = true,
                 Value = 500,
@@ -351,9 +351,9 @@ namespace TB_QuestGame
         }
 
         /// <summary>
-        /// initialize the universe with all of the treasures
+        /// initialize the Ship with all of the treasures
         /// </summary>
-        private void IntializeUniverseTreasures()
+        private void IntializeShipTreasures()
         {
             Treasures.Add(new Treasure
             {

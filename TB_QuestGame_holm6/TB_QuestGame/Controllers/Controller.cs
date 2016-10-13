@@ -19,7 +19,7 @@ namespace TB_QuestGame
         //
         private ConsoleView _gameConsoleView;
         private Player _gameTraveler;
-        private Ship _gameUniverse;
+        private Ship _gameShip;
 
         #endregion
 
@@ -50,9 +50,9 @@ namespace TB_QuestGame
         private void InitializeGame()
         {
             _usingGame = true;
-            _gameUniverse = new Ship();
+            _gameShip = new Ship();
             _gameTraveler = new Player();
-            _gameConsoleView = new ConsoleView(_gameTraveler, _gameUniverse);
+            _gameConsoleView = new ConsoleView(_gameTraveler, _gameShip);
 
         }
 
@@ -89,7 +89,7 @@ namespace TB_QuestGame
                         _gameConsoleView.DisplayLookAround();
                         break;
                     case PlayerAction.Move:
-                        _gameTraveler.SpaceTimeLocationID = _gameConsoleView.DisplayGetTravelersNewDestination().SpaceTimeLocationID;
+                        _gameTraveler.DeckLocationID = _gameConsoleView.DisplayGetTravelersNewDestination().DeckID;
                         break;
                     case PlayerAction.PlayerInfo:
                         _gameConsoleView.DisplayTravelerInfo();
@@ -133,7 +133,7 @@ namespace TB_QuestGame
             _gameConsoleView.DisplayMissionSetupIntro();
             _gameTraveler.Name = _gameConsoleView.DisplayGetTravelersName();
             _gameTraveler.Race = _gameConsoleView.DisplayGetTravelersRace();
-            _gameTraveler.SpaceTimeLocationID = _gameConsoleView.DisplayGetTravelersNewDestination().SpaceTimeLocationID;
+            _gameTraveler.DeckLocationID = _gameConsoleView.DisplayGetTravelersNewDestination().DeckID;
 
             // 
             // add initial items to the traveler's inventory
@@ -150,7 +150,7 @@ namespace TB_QuestGame
         {
             Item item;
 
-            item = _gameUniverse.GetItemtByID(itemID);
+            item = _gameShip.GetItemtByID(itemID);
             item.SpaceTimeLocationID = 0;
 
             _gameTraveler.PlayersItems.Add(item);
@@ -164,7 +164,7 @@ namespace TB_QuestGame
         {
             Treasure item;
 
-            item = _gameUniverse.GetTreasuretByID(itemID);
+            item = _gameShip.GetTreasuretByID(itemID);
             item.SpaceTimeLocationID = 0;
 
             _gameTraveler.PlayersTreasures.Add(item);

@@ -76,11 +76,11 @@
       <FileName>Models\Treasure.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project_TARDIS.Universe">
+  <Class Name="Project_TARDIS.Ship">
     <Position X="18.25" Y="0.5" Width="3" />
     <TypeIdentifier>
       <HashCode>gQAAAAAiAABACAAQBhAAAAAAAAAAEABIAAAQAAAAAAA=</HashCode>
-      <FileName>Models\Universe.cs</FileName>
+      <FileName>Models\Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_TARDIS.Program" Collapsed="true">

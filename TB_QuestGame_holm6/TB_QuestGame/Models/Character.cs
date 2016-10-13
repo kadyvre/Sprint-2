@@ -26,7 +26,7 @@ namespace TB_QuestGame
         #region FIELDS
 
         private string _name;
-        private int _spaceTimeLocationID;
+        private int _DeckLocationID;
         private RaceType _race;
 
         #endregion
@@ -40,10 +40,10 @@ namespace TB_QuestGame
             set { _name = value; }
         }
 
-        public int SpaceTimeLocationID
+        public int DeckLocationID
         {
-            get { return _spaceTimeLocationID; }
-            set { _spaceTimeLocationID = value; }
+            get { return _DeckLocationID; }
+            set { _DeckLocationID = value; }
         }
 
         public RaceType Race
@@ -62,11 +62,11 @@ namespace TB_QuestGame
 
         }
 
-        public Character(string name, RaceType race, int spaceTimeLocationID)
+        public Character(string name, RaceType race, int deckLocationID)
         {
             _name = name;
             _race = race;
-            _spaceTimeLocationID = spaceTimeLocationID;
+            _DeckLocationID = deckLocationID;
         }
 
         #endregion

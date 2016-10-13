@@ -10,11 +10,11 @@
       <FileName>Controllers\Controller.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project_TARDIS.Universe">
+  <Class Name="Project_TARDIS.Ship">
     <Position X="7.75" Y="0.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>gQAAAAAiAABACAAQBhAAAAAAAAAAEABIAAAQAAAAAAA=</HashCode>
-      <FileName>Models\Universe.cs</FileName>
+      <FileName>Models\Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_TARDIS.ConsoleView">
