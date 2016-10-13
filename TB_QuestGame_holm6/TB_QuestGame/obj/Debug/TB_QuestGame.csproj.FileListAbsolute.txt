@@ -1,0 +1,6 @@
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\bin\Debug\TB_QuestGame.exe.config
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\bin\Debug\TB_QuestGame.exe
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\bin\Debug\TB_QuestGame.pdb
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\obj\Debug\TB_QuestGame.csprojResolveAssemblyReference.cache
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\obj\Debug\TB_QuestGame.exe
+C:\Users\holm6\Desktop\TB_QuestGame_holm6\TB_QuestGame\obj\Debug\TB_QuestGame.pdb
