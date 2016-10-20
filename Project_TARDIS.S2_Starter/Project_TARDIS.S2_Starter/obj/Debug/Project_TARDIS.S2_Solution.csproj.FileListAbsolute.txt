@@ -1,0 +1,12 @@
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.exe.config
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Solution.csprojResolveAssemblyReference.cache
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\velisj\Git\NMC\CIT195\Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.exe.config
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\bin\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\velisj\Git\NMC\CIT195\Demo_ Project_TARDIS\Project_TARDIS.S2_Solution\obj\Debug\Project_TARDIS.S2_Solution.csprojResolveAssemblyReference.cache
