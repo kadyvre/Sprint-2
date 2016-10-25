@@ -694,6 +694,21 @@ namespace Project_TARDIS
                 }
             }
 
+            ConsoleUtil.DisplayMessage("");
+            ConsoleUtil.DisplayMessage("Treasures");
+            ConsoleUtil.DisplayMessage("");
+
+            foreach (Treasure treasure in _gameUniverse.Treasures)
+            {
+                if (treasure.SpaceTimeLocationID == locationID)
+                {
+                    ConsoleUtil.DisplayMessage("Name: " + treasure.Name);
+                    ConsoleUtil.DisplayMessage("Description: " + treasure.Description);
+                    ConsoleUtil.DisplayMessage("Value: " + treasure.Value.ToString());
+                    Console.WriteLine();
+                }
+            }
+
             DisplayContinuePrompt();
         }
 
@@ -708,6 +723,7 @@ namespace Project_TARDIS
 
             int itemID = 0;
             int locationID;
+            bool validItem;
 
             locationID = _gameTraveler.SpaceTimeLocationID;
 
@@ -723,13 +739,26 @@ namespace Project_TARDIS
             }
 
             Console.Write("Enter Item ID: ");
-            itemID = int.TryParse(Console.ReadLine());
- 
-            catch (ArgumentOutOfRangeException ex)
+
+            if (int.TryParse(Console.ReadLine(), out itemID))
             {
-                Console.WriteLine("There is no such Item available, please choose an item from the list.");
+                validItem = true;
+                
+                //try
+                //{
+
+                // }
+
+                // catch (ArgumentException)
             }
+
+            else
+            {
+                ConsoleUtil.DisplayMessage("Please Enter a valid Item ID");
+            }
+          
             DisplayContinuePrompt();
+
             return itemID;
 
             

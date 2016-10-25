@@ -309,6 +309,16 @@ namespace Project_TARDIS
                   "provide excellent habitat for a rich ecosystem of flora and fauna.",
                 Accessable = true
             });
+
+            SpaceTimeLocations.Add(new SpaceTimeLocation
+            {
+                Name = "New York",
+                SpaceTimeLocationID = 4,
+                Description = "A large city located on Earth, a class M planet that sustains a multitude of lifeforms. " +
+                 "Located in the Sol system, this is the only planet that supports life here." +
+                 "Humans are the only sapient species one this planet.",
+                Accessable = true
+            });
         }
 
         /// <summary>
@@ -348,6 +358,17 @@ namespace Project_TARDIS
                 Value = 500,
                 CanAddToInventory = true
             });
+
+            Items.Add(new Item
+            {
+                Name = "Screw Driver",
+                GameObjectID = 4,
+                Description = "A simple screw driver with no interesting properties whatsoever...",
+                SpaceTimeLocationID = 2,
+                HasValue = true,
+                Value = 50,
+                CanAddToInventory = true
+            });
         }
 
         /// <summary>
@@ -372,10 +393,22 @@ namespace Project_TARDIS
                 Name = "Lodestone",
                 TreasureType = Treasure.Type.Lodestone,
                 GameObjectID = 2,
-                Description = "A deep red ruby the size of an egg.",
+                Description = "A naturally magnetic stone.",
                 SpaceTimeLocationID = 3,
                 HasValue = true,
                 Value = 15,
+                CanAddToInventory = true
+            });
+
+            Treasures.Add(new Treasure
+            {
+                Name = "Platinum Poker Chip",
+                TreasureType = Treasure.Type.Lodestone,
+                GameObjectID = 3,
+                Description = "A poker chip made of pure platinum.",
+                SpaceTimeLocationID = 3,
+                HasValue = true,
+                Value = 1500,
                 CanAddToInventory = true
             });
         }

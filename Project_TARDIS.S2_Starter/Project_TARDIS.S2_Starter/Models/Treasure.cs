@@ -17,6 +17,7 @@ namespace Project_TARDIS
             Ruby,
             Emerald,
             Lodestone,
+            PlatinumChip,
             GoldCoin,
             SilverCoin,
             BronzeCoin
