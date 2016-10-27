@@ -723,7 +723,6 @@ namespace Project_TARDIS
 
             int itemID = 0;
             int locationID;
-            bool validItem;
 
             locationID = _gameTraveler.SpaceTimeLocationID;
 
@@ -732,7 +731,7 @@ namespace Project_TARDIS
                 if (item.SpaceTimeLocationID == locationID)
                 {
                     ConsoleUtil.DisplayMessage("Name: " + item.Name);
-                    ConsoleUtil.DisplayMessage("ID: " + item.SpaceTimeLocationID);
+                    ConsoleUtil.DisplayMessage("ID: " + item.GameObjectID);
                     ConsoleUtil.DisplayMessage("Value: " + item.Value.ToString());
                     Console.WriteLine();
                 }
@@ -740,23 +739,20 @@ namespace Project_TARDIS
 
             Console.Write("Enter Item ID: ");
 
+            bool validItem;
+
+
             if (int.TryParse(Console.ReadLine(), out itemID))
             {
                 validItem = true;
-                
-                //try
-                //{
-
-                // }
-
-                // catch (ArgumentException)
             }
 
             else
             {
                 ConsoleUtil.DisplayMessage("Please Enter a valid Item ID");
             }
-          
+            
+            
             DisplayContinuePrompt();
 
             return itemID;
@@ -764,6 +760,145 @@ namespace Project_TARDIS
             
         }
 
+        public int DisplayPickUpTreasure()
+        {
+            ConsoleUtil.HeaderText = "Pick Up Treasure";
+            ConsoleUtil.DisplayReset();
+
+            ConsoleUtil.DisplayMessage("");
+            ConsoleUtil.DisplayMessage("Treasure");
+            ConsoleUtil.DisplayMessage("");
+
+            int treasureID = 0;
+            int locationID;
+
+            locationID = _gameTraveler.SpaceTimeLocationID;
+
+            foreach (Treasure treasure in _gameUniverse.Treasures)
+            {
+                if (treasure.SpaceTimeLocationID == locationID)
+                {
+                    ConsoleUtil.DisplayMessage("Name: " + treasure.Name);
+                    ConsoleUtil.DisplayMessage("ID: " + treasure.GameObjectID);
+                    ConsoleUtil.DisplayMessage("Value: " + treasure.Value.ToString());
+                    Console.WriteLine();
+                }
+            }
+
+            Console.Write("Enter Treasure ID: ");
+
+            bool validTreasure;
+
+
+            if (int.TryParse(Console.ReadLine(), out treasureID))
+            {
+                validTreasure = true;
+            }
+
+            else
+            {
+                ConsoleUtil.DisplayMessage("Please Enter a valid Treasure ID");
+            }
+
+
+            DisplayContinuePrompt();
+
+            return treasureID;
+        }
+
+        public int DisplayPutDownItem()
+        {
+            ConsoleUtil.HeaderText = "Put Down Item";
+            ConsoleUtil.DisplayReset();
+
+            ConsoleUtil.DisplayMessage("");
+            ConsoleUtil.DisplayMessage("Items");
+            ConsoleUtil.DisplayMessage("");
+
+            int itemID = 0;
+            int locationID;
+
+            locationID = 0;
+
+            foreach (Item item in _gameTraveler.TravelersItems)
+            {
+                if (item.SpaceTimeLocationID == locationID)
+                {
+                    ConsoleUtil.DisplayMessage("Name: " + item.Name);
+                    ConsoleUtil.DisplayMessage("ID: " + item.GameObjectID);
+                    ConsoleUtil.DisplayMessage("Value: " + item.Value.ToString());
+                    Console.WriteLine();
+                }
+            }
+
+            Console.Write("Enter Item ID: ");
+
+            bool validItem;
+
+
+            if (int.TryParse(Console.ReadLine(), out itemID))
+            {
+                validItem = true;
+            }
+
+            else
+            {
+                ConsoleUtil.DisplayMessage("Please Enter a valid Item ID");
+            }
+
+
+            DisplayContinuePrompt();
+
+
+            return itemID;
+        }
+
+        public int DisplayPutDownTreasure()
+        {
+            ConsoleUtil.HeaderText = "Put Down Treasure";
+            ConsoleUtil.DisplayReset();
+
+            ConsoleUtil.DisplayMessage("");
+            ConsoleUtil.DisplayMessage("Treasures");
+            ConsoleUtil.DisplayMessage("");
+
+            int treasureID = 0;
+            int locationID;
+
+            locationID = 0;
+
+            foreach (Treasure treasure in _gameTraveler.TravelersTreasures)
+            {
+                if (treasure.SpaceTimeLocationID == locationID)
+                {
+                    ConsoleUtil.DisplayMessage("Name: " + treasure.Name);
+                    ConsoleUtil.DisplayMessage("ID: " + treasure.GameObjectID);
+                    ConsoleUtil.DisplayMessage("Value: " + treasure.Value.ToString());
+                    Console.WriteLine();
+                }
+            }
+
+            Console.Write("Enter treasure ID: ");
+
+            bool validtreasure;
+
+
+            if (int.TryParse(Console.ReadLine(), out treasureID))
+            {
+                validtreasure = true;
+            }
+
+            else
+            {
+                ConsoleUtil.DisplayMessage("Please Enter a valid treasure ID");
+            }
+
+
+            DisplayContinuePrompt();
+
+
+            return treasureID;
+        }
         #endregion
     }
 }

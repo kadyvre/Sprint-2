@@ -24,3 +24,9 @@ C:\Users\holm6\Desktop\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\obj\D
 C:\Users\holm6\Desktop\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\obj\Debug\Project_TARDIS.S2_Starter.csprojResolveAssemblyReference.cache
 C:\Users\holm6\Desktop\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\bin\Debug\Project_TARDIS.S2_Starter.exe
 C:\Users\holm6\Desktop\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\bin\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\bin\Debug\Project_TARDIS.S2_Starter.exe.config
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\obj\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\obj\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\bin\Debug\Project_TARDIS.S2_Starter.exe
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\bin\Debug\Project_TARDIS.S2_Starter.pdb
+C:\Users\holm6\Downloads\Project_TARDIS.S2_Starter\Project_TARDIS.S2_Starter\obj\Debug\Project_TARDIS.S2_Starter.csprojResolveAssemblyReference.cache

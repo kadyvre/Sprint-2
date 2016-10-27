@@ -104,25 +104,57 @@ namespace Project_TARDIS
                     case TravelerAction.PickUpItem:
                         int itemID;
                         itemID = _gameConsoleView.DisplayPickUpItem();
-                        _gameConsoleView.DisplayPickUpItem();
 
                         Item PickedUpItem = new Item();
                         PickedUpItem = _gameUniverse.GetItemtByID(itemID);
+
+                        _gameTraveler.TravelersItems.Add(PickedUpItem);
 
                         PickedUpItem.SpaceTimeLocationID = 0;
 
                         break;
                     case TravelerAction.PickUpTreasure:
+                        int treasureID;
+
+                        treasureID = _gameConsoleView.DisplayPickUpTreasure();
+
+                        Treasure PickedUpTreasure = new Treasure();
+                        PickedUpTreasure = _gameUniverse.GetTreasuretByID(treasureID);
+
+                        _gameTraveler.TravelersTreasures.Add(PickedUpTreasure);
+
+                        PickedUpTreasure.SpaceTimeLocationID = 0;
                         //
                         // TODO write a DisplayPickUpTreasure method in the ConsoleView that lists game treasures in a location and prompts the traveler for an ID that is returned. Then adds the object to the player's treasure by adding them to the traveler's treasure list and setting the object's LocationID to the location of the traveler.
                         //
                         break;
                     case TravelerAction.PutDownItem:
+                        int _itemID;
+
+                        _itemID = _gameConsoleView.DisplayPutDownItem();
+
+                        Item PutDownItem = new Item();
+                        PutDownItem = _gameUniverse.GetItemtByID(_itemID);
+                       
+                        _gameTraveler.TravelersItems.Remove(PutDownItem);
+
+                        PutDownItem.SpaceTimeLocationID = _gameTraveler.SpaceTimeLocationID;
+
                         //
                         // TODO write a DisplayPutDownItem method in the ConsoleView that lists the travelers game items and prompts the traveler for an ID that is returned. Then removes the object from the travel's items by removing it from the traveler's item list and setting the items's LocationID to the location of the traveler.
                         //
                         break;
                     case TravelerAction.PutDownTreasure:
+                        int _treasureID;
+
+                        _treasureID = _gameConsoleView.DisplayPutDownTreasure();
+
+                        Treasure PutDownTreasure = new Treasure();
+                        PutDownTreasure = _gameUniverse.GetTreasuretByID(_treasureID);
+
+                        _gameTraveler.TravelersTreasures.Remove(PutDownTreasure);
+
+                        PutDownTreasure.SpaceTimeLocationID = _gameTraveler.SpaceTimeLocationID;
                         //
                         // TODO write a DisplayPutDownTreasure method in the ConsoleView that lists the travelers game treasures and prompts the player for an ID that is returned. Then removes the object from the travel's treasure by removing it from the traveler's treasure list and setting the treasures's LocationID to the location of the traveler.
                         //

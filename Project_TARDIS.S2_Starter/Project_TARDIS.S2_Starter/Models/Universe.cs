@@ -159,7 +159,6 @@ namespace Project_TARDIS
         public Item GetItemtByID(int ID)
         {
             Item requestedItem = null;
-
             //
             // run through the item list and grab the correct one
             //
@@ -319,6 +318,16 @@ namespace Project_TARDIS
                  "Humans are the only sapient species one this planet.",
                 Accessable = true
             });
+
+            SpaceTimeLocations.Add(new SpaceTimeLocation
+            {
+                Name = "Dalek",
+                SpaceTimeLocationID = 5,
+                Description = "A large city located on Earth, a class M planet that sustains a multitude of lifeforms. " +
+                 "Located in the Sol system, this is the only planet that supports life here." +
+                 "Humans are the only sapient species one this planet.",
+                Accessable = false
+            });
         }
 
         /// <summary>
@@ -403,13 +412,13 @@ namespace Project_TARDIS
             Treasures.Add(new Treasure
             {
                 Name = "Platinum Poker Chip",
-                TreasureType = Treasure.Type.Lodestone,
+                TreasureType = Treasure.Type.PlatinumChip,
                 GameObjectID = 3,
                 Description = "A poker chip made of pure platinum.",
                 SpaceTimeLocationID = 3,
                 HasValue = true,
                 Value = 1500,
-                CanAddToInventory = true
+                CanAddToInventory = false
             });
         }
 
