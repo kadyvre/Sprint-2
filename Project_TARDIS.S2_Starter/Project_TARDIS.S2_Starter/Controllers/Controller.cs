@@ -102,15 +102,23 @@ namespace Project_TARDIS
                         _gameConsoleView.DisplayLookAt();
                         break;
                     case TravelerAction.PickUpItem:
-                        int itemID;
+                        int itemID;                        
                         itemID = _gameConsoleView.DisplayPickUpItem();
-
+                        
                         Item PickedUpItem = new Item();
                         PickedUpItem = _gameUniverse.GetItemtByID(itemID);
 
-                        _gameTraveler.TravelersItems.Add(PickedUpItem);
+                        if (PickedUpItem.SpaceTimeLocationID == 0)
+                        {
+                            Console.WriteLine("That item is already in your inventory!");
+                        }
 
-                        PickedUpItem.SpaceTimeLocationID = 0;
+                        else
+                        {
+                            _gameTraveler.TravelersItems.Add(PickedUpItem);
+                            PickedUpItem.SpaceTimeLocationID = 0;
+                        }
+                        
 
                         break;
                     case TravelerAction.PickUpTreasure:

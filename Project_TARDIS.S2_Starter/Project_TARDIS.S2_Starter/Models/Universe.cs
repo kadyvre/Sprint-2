@@ -176,8 +176,7 @@ namespace Project_TARDIS
             //
             if (requestedItem == null)
             {
-                string feedbackMessage = $"The item ID {ID} does not exist in the current Universe.";
-                throw new ArgumentException(ID.ToString(), feedbackMessage);
+                Console.WriteLine($"The item ID {ID} does not exist in the current Universe.");
             }
 
             return requestedItem;

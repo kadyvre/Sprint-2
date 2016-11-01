@@ -735,24 +735,31 @@ namespace Project_TARDIS
                     ConsoleUtil.DisplayMessage("Value: " + item.Value.ToString());
                     Console.WriteLine();
                 }
+
+                else
+                {
+                    Console.WriteLine("That Item does not exist!");
+                }
             }
 
             Console.Write("Enter Item ID: ");
 
-            bool validItem;
+            bool validItem = false;
 
-
-            if (int.TryParse(Console.ReadLine(), out itemID))
+            while (validItem != true)
             {
-                validItem = true;
+                if (int.TryParse(Console.ReadLine(), out itemID))
+                {
+                    validItem = true;
+                }
+
+                else
+                {
+                    ConsoleUtil.DisplayMessage("Please Enter a valid Item ID");
+                }
+            
             }
 
-            else
-            {
-                ConsoleUtil.DisplayMessage("Please Enter a valid Item ID");
-            }
-            
-            
             DisplayContinuePrompt();
 
             return itemID;
@@ -790,7 +797,7 @@ namespace Project_TARDIS
             bool validTreasure;
 
 
-            if (int.TryParse(Console.ReadLine(), out treasureID))
+            if (validTreasure = false && int.TryParse(Console.ReadLine(), out treasureID))
             {
                 validTreasure = true;
             }
@@ -836,7 +843,7 @@ namespace Project_TARDIS
             bool validItem;
 
 
-            if (int.TryParse(Console.ReadLine(), out itemID))
+            if (validItem = false && int.TryParse(Console.ReadLine(), out itemID))
             {
                 validItem = true;
             }
@@ -883,7 +890,7 @@ namespace Project_TARDIS
             bool validtreasure;
 
 
-            if (int.TryParse(Console.ReadLine(), out treasureID))
+            if (validtreasure = false && int.TryParse(Console.ReadLine(), out treasureID))
             {
                 validtreasure = true;
             }
